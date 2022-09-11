@@ -1,5 +1,3 @@
-#include <unistd.h>
-
 /*
 the pointer stores a address.
 When you use the * before the pointer it derreferences it, meaning you are
