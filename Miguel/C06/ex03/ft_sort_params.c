@@ -11,7 +11,6 @@ int	main(int argc, char **argv)
 
 	
 	i = 0;
-	ft_write(argc, argv);
 	while (++i < argc)
 	{
 		min = argv[i];
