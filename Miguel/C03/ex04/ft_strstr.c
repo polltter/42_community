@@ -12,38 +12,24 @@
 
 #include <stdio.h>
 
-int	ft_strlen(char *str);
-
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
-	int	count_to_find;
-	int	len_to_find;
+	int	count;
 
 	i = 0;
-	len_to_find = ft_strlen(to_find);
 	if (to_find[0] == '\0')
 		return (str);
 	while (str[i] != '\0')
 	{
-		count_to_find = 0;
-		while (str[i + count_to_find] == to_find[count_to_find]
-			&& to_find[count_to_find] != '\0')
-			count_to_find++;
-		if (count_to_find == len_to_find)
-			return (str + i);
-		i += count_to_find;
+		count = 0;
+		while (str[i + count] != '\0' && str[i + count] == to_find[count])
+		{
+			if (to_find[count + 1] == '\0')
+				return (&str[i]);
+			count++;
+		}
 		i++;
 	}
-	return (NULL);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	return (0);
 }
