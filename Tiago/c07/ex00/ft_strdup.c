@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/18 15:22:06 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/19 15:29:28 by mtiago-s         ###   ########.fr       */
+/*   Created: 2022/09/18 18:24:38 by mtiago-s          #+#    #+#             */
+/*   Updated: 2022/09/18 18:40:01 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
-{
-	int	n;
-	int	o;
-	int	p;
-	int	i;
+#include <stdlib.h>
 
-	n = 0;
-	o = 1;
-	i = 3;
-	if (index == 1 || index == 2)
-		return (1);
-	else if (index == 0)
-		return (0);
-	else if (index < 0)
-		return (-1);
-	while (i <= index)
+char	*ft_strdup(char *src)
+{
+	int		i;
+	char	*dest;
+
+	i = 0;
+	while (src[i])
+		i++;
+	dest = (char *)malloc(sizeof(char) * i);
+	i = 0;
+	while (src[i])
 	{
-		p = n;
-		n = o;
-		o = n + p;
-		p = o + n;
+		dest[i] = src[i];
 		i++;
 	}
-	return (p);
+	dest[i] = '\0';
+	return (dest);
 }
