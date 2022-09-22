@@ -1,50 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:27:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/22 14:46:26 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/15 10:24:14 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/15 10:27:54 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlen(char *str);
-
-char	*ft_strrev(char *str)
+void	ft_swap(int *a, int *b)
 {
-	int		size;
-	int		i;
-	char	temp;
+	int	temp;
 
-	i = -1;
-	size = ft_strlen(str);
-	while (++i < size / 2)
-	{
-		temp = str[size - i - 1];
-		str[size - i - 1] = str[i];
-		str[i] = temp;
-	}
-	return (str);
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	temp = *b;
+	*b = *a;
+	*a = temp;
 }
 
 int	main(void)
 {
-	char	str[] = "Helllo";
+	int	x;
+	int	y;
+	int	*a;
+	int	*b;
 
-	printf("%s\n", ft_strrev(str));
+	a = &x;
+	b = &y;
+	x = 10;
+	y = 42;
+	ft_swap(a, b);
+	printf("x is now: %d and y is now: %d", x, y);
 	return (0);
 }

@@ -1,50 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:27:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/22 14:46:26 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/16 12:39:58 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/17 11:16:47 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str);
-
-char	*ft_strrev(char *str)
+int	*ft_range(int start, int end)
 {
-	int		size;
-	int		i;
-	char	temp;
-
-	i = -1;
-	size = ft_strlen(str);
-	while (++i < size / 2)
-	{
-		temp = str[size - i - 1];
-		str[size - i - 1] = str[i];
-		str[i] = temp;
-	}
-	return (str);
-}
-
-int	ft_strlen(char *str)
-{
+	int	size;
+	int	*arr;
 	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	i = -1;
+	size = start - end--;
+	arr = (int *)malloc(size * sizeof(int));
+	while (++end <= start)
+		arr[++i] = end;
+	return (arr);
 }
 
 int	main(void)
 {
-	char	str[] = "Helllo";
+	int	i;
+	int	start = 15;
+	int	end = -15;
 
-	printf("%s\n", ft_strrev(str));
+	for (i = 0; i <= start - end; i++)
+		printf("%d ", ft_range(start, end)[i]);
 	return (0);
 }

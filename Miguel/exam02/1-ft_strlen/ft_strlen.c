@@ -1,35 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:27:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/22 14:46:26 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/15 10:17:41 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/15 10:21:01 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-int	ft_strlen(char *str);
-
-char	*ft_strrev(char *str)
-{
-	int		size;
-	int		i;
-	char	temp;
-
-	i = -1;
-	size = ft_strlen(str);
-	while (++i < size / 2)
-	{
-		temp = str[size - i - 1];
-		str[size - i - 1] = str[i];
-		str[i] = temp;
-	}
-	return (str);
-}
 
 int	ft_strlen(char *str)
 {
@@ -41,10 +22,10 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char	str[] = "Helllo";
+	char *str = "Hello";
 
-	printf("%s\n", ft_strrev(str));
+	printf("%d\n", ft_strlen(str));
 	return (0);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:27:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/22 14:46:26 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/15 13:41:14 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_strlen(char *str)
 int	main(void)
 {
 	char	str[] = "Helllo";
-
+	
 	printf("%s\n", ft_strrev(str));
 	return (0);
 }

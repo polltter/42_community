@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:27:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/22 14:46:26 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/15 10:30:07 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/15 10:35:09 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
 int	ft_strlen(char *str);
 
-char	*ft_strrev(char *str)
+char	*ft_rev_print(char *str)
 {
-	int		size;
-	int		i;
-	char	temp;
+	int	str_length;
+	int	i;
 
-	i = -1;
-	size = ft_strlen(str);
-	while (++i < size / 2)
-	{
-		temp = str[size - i - 1];
-		str[size - i - 1] = str[i];
-		str[i] = temp;
-	}
+	str_length = ft_strlen(str);
+	i = str_length;
+	while (--i >= 0)
+		write (1, &str[i], 1);
+	write (1, "\n", 1);
 	return (str);
 }
 
@@ -43,8 +39,8 @@ int	ft_strlen(char *str)
 
 int	main(void)
 {
-	char	str[] = "Helllo";
+	char	*str = "Hello";
 
-	printf("%s\n", ft_strrev(str));
+	ft_rev_print(str);
 	return (0);
 }
