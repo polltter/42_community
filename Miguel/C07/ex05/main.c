@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 11:23:17 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/20 09:20:51 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/21 10:59:30 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/21 15:21:27 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strstr(char *str, char *to_find)
+char	**ft_split(char *str, char *charset);
+
+int		main(void)
 {
-	int	i;
-	int	count;
+	int		str_n;
+	char	*str;
+	char	*sep;
+	char	**strs;
 
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	str = "      \nasd1a sd1a sd1as d1";
+	sep = "1";
+	strs = ft_split(str, sep);
+	str_n = 0;
+	while (strs[str_n] != 0)
 	{
-		count = 0;
-		while (str[i + count] != '\0' && str[i + count] == to_find[count])
-		{
-			if (to_find[count + 1] == '\0')
-				return (&str[i]);
-			count++;
-		}
-		i++;
+		printf("[%d]: %s\n", str_n, strs[str_n]);
+		str_n++;
 	}
+	free(strs);
 	return (0);
 }
