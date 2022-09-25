@@ -25,7 +25,7 @@ int	main(void)
 	ft_atoi_base_test("\n \t\r \v \f+-+++--fdd,.fs", "abcdefgh", -347);
 	// teste com bases decimais
 	printf("Bases decimais:\n");
-	ft_atoi_base_test("\n \t\r \v \f++-++--2147483648,.fs", "0123456789", -2147483648);
+	ft_atoi_base_test("\n \t\r \v \f++-++--2147483648,.fs", "0123456789", 19999999999);
 	ft_atoi_base_test("\n \t\r \v \f+-+++-+jjf,.fs", "abcdefghij", 995);
 	// teste com bases hexadecimais
 	printf("Bases hexadecimais:\n");

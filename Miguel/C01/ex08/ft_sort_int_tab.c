@@ -1,10 +1,22 @@
-int	find_min(int *tab, int size, int i);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/12 08:48:39 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/12 08:48:39 by mvenanci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int		find_min(int *tab, int size, int i);
 void	ft_swap(int *tab, int index, int i);
 
 void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
-	int index;
+	int	index;
 
 	i = 0;
 	while (i < size)
@@ -29,14 +41,14 @@ int	find_min(int *tab, int size, int i)
 			min = tab[i];
 			index = i;
 		}
-		i++;	
+		i++;
 	}
 	return (index);
 }
 
 void	ft_swap(int *tab, int index, int i)
 {
-	int temp;
+	int	temp;
 
 	temp = tab[index];
 	tab[index] = tab[i];

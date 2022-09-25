@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:15:24 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/21 18:17:41 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/22 10:30:05 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	{
 		i = skip_white_plus_minus(nbr);
 		nb = convert_to_dec(i, base_from, nbr);
-		if (i < 0)
+		if (i < 0 && nb != 0)
 		{
 			nbr_in_base = (char *)malloc(sizeof(char) \
 			* find_size(nb, base_to) + 2);

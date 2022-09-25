@@ -1,12 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/12 08:37:19 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/12 08:37:19 by mvenanci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-/*
-len is the number of bytes in the string. Fristly we have to determine the 
-length of the string so that we can know the number of bytes to put in the function "write".
-After that we can just put 'str' in the middle spot (it doenst need and '&' because str is 
-already an address), in the last spot of write, we put "len" because the length of the string
-is the number of bytes we want to print. 
-*/
-void ft_putstr(char *str)
+
+void	ft_putstr(char *str)
 {
 	int	len;
 

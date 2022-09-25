@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 09:14:55 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/14 10:58:09 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:36:28 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,21 @@
 
 int		base_len(char *base);
 int		is_base_valid(char *base);
-void	convert_to_base(int nbr, char *base);
+void	convert_to_base(long int nbr, char *base);
 
 void	ft_putnbr_base(int nbr, char *base)
 {
+	long int	lnbr;
+
+	lnbr = nbr;
 	if (!is_base_valid(base))
 		return ;
-	if (nbr < 0)
+	if (lnbr < 0)
 	{
 		write(1, "-", 1);
-		nbr *= -1;
+		lnbr *= -1;
 	}
-	if (nbr == INT_MIN)
-	{
-		write(1, &base[2], 1);
-		nbr = 147483648;
-	}
-	convert_to_base(nbr, base);
+	convert_to_base(lnbr, base);
 }
 
 int	base_len(char *base)
@@ -55,7 +53,8 @@ int	is_base_valid(char *base)
 	while (base[i] != '\0')
 	{
 		j = i + 1;
-		if (base[i] == '+' || base[i] == '-')
+		if (base[i] == '+' || base[i] == '-'
+			|| ((base[j] >= 9 && base[j] <= 13) || base[j] == 32))
 			return (0);
 		while (base[j] != '\0')
 		{
@@ -68,24 +67,19 @@ int	is_base_valid(char *base)
 	return (1);
 }
 
-void	convert_to_base(int nbr, char *base)
+void	convert_to_base(long int nbr, char *base)
 {
 	int	base_length;
-	int	remains[100];
-	int	i;
 
-	i = 0;
 	base_length = base_len(base);
-	while (nbr != 0)
-	{
-		remains[i] = nbr % base_length;
-		nbr /= base_length;
-		i++;
+	if (nbr / base_length == 0)
+	{		
+		write (1, &base[nbr % base_length], 1);
+		return ;
 	}
-	i--;
-	while (i >= 0)
+	else
 	{
-		write(1, &base[remains[i]], 1);
-		i--;
+		convert_to_base(nbr / base_length, base);
+		write(1, &base[nbr % base_length], 1);
 	}
 }

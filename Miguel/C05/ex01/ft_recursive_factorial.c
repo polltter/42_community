@@ -1,4 +1,16 @@
-int ft_recursive_factorial(int nb)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 09:32:05 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/20 09:32:05 by mvenanci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_recursive_factorial(int nb)
 {
 	int	fact;
 

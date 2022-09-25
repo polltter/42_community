@@ -7,7 +7,6 @@ int main(void)
 	int	i;
 
 	i = -2;
-	while (++i < 5000)
-		printf("%d\n", ft_sqrt(i));
+	printf("%d\n", ft_sqrt(2147483647));
 	return (0);
 }

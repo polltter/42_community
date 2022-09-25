@@ -1,9 +1,14 @@
-/*
-So we need to create a temp variable in order to store whatever is
-inside a the address pointed by b. Then, inside of the address stored by b, 
-store whats inside of the addresses pointed to by a. Finally, we can change
-the value pointed to by a to the value stored in temp. 
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/10 18:07:24 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/10 18:13:41 by mvenanci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {

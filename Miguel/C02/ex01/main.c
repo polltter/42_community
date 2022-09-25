@@ -5,15 +5,15 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
 int	main(void)
 {
-	char	*src = "Hello";
-	char	dest[10];
+	char	*src = "oi";
+	char	dest[10] = "banana";
 	char	dest_real[10];
 	unsigned int	n;
 
-	n = 8;
+	n = 2;
 	ft_strncpy(dest, src, n);
 	strncpy(dest_real, src, n);
 	printf ("%s\n", dest);
-	printf ("%c\n", dest_real);
+	printf ("%s\n", dest_real);
 	return (0);
 }

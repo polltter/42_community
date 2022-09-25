@@ -1,7 +1,14 @@
-/*
-Same logic as the previous exercise. The '\0' is a null charracter
-present in everything. Basically means: string is over. 
-*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/12 08:43:46 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/12 08:43:46 by mvenanci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {

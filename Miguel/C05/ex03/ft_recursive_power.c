@@ -1,4 +1,16 @@
-int ft_recursive_power(int nb, int power)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 09:32:32 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/20 09:32:32 by mvenanci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_recursive_power(int nb, int power)
 {
 	int	res;
 

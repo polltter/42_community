@@ -6,7 +6,7 @@ char	*ft_strcpy(char *dest, char *src);
 int	main(void)
 {
 	char	dest[1];
-	char	dest_real[1];
+	//char	dest_real[1];
 	char	*src = "Hello";
 	ft_strcpy (dest, src);
 	//strcpy (dest_real, src);
