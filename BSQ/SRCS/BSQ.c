@@ -3,22 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   BSQ.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/26 13:02:44 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/26 14:03:11 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "bsq.h"
 
 int	ft_atoi(char *str)
 {
-	int res;
-	int i;
+	int	res;
+	int	i;
 
 	i = -1;
 	res = 0;
@@ -29,41 +26,36 @@ int	ft_atoi(char *str)
 
 int	main(int ac, char **av)
 {
-	int	file;
-	int l;
-	char empty;
-	char obs;
-	char full;
-	char *buf;
-	char c;
+	t_file	mapf;
+	char	c;
 
 	(void) ac;
-	l = 1;
-	file = open(av[1], 0);
-	read(file, &c, 1);
+	mapf.l = 1;
+	mapf.file = open(av[1], 0);
+	read(mapf.file, &c, 1);
 	while (c != '\n')
 	{
-		read(file, &c, 1);
-		l++;
+		read(mapf.file, &c, 1);
+		mapf.l++;
 	}
-	buf = (char *)malloc(sizeof(char) * l);
-	close(file);
-	file = open(av[1], 0);
-	l = 0;
-	read(file, &c, 1);
-	buf[l] = c;
+	mapf.buf = (char *)malloc(sizeof(char) * l);
+	close(mapf.file);
+	mapf.file = open(av[1], 0);
+	mapf.l = 0;
+	read(mapf.file, &c, 1);
+	mapf.buf[mapf.l] = c;
 	while (c != '\n')
 	{
-		read(file, &c, 1);
-		buf[++l] = c;
+		read(mapf.file, &c, 1);
+		mapf.buf[++mapf.l] = c;
 	}
-	buf[l] = '\0';
-	printf("%s\n", buf);
-	full = buf[l -1];
-	obs = buf[l -2];
-	empty = buf[l -3];
-	buf[l - 3] = '\0';
-	l = ft_atoi(buf);
-	printf("%d\n", l);
-	close(file);
+	mapf.buf[mapf.l] = '\0';
+	printf("%s\n", mapf.buf);
+	mapf.full = mapf.buf[mapf.l - 1];
+	mapf.obs = mapf.buf[mapf.l - 2];
+	mapf.empty = mapf.buf[mapf.l - 3];
+	mapf.buf[mapf.l - 3] = '\0';
+	mapf.l = ft_atoi(mapf.buf);
+	printf("%d\n", mapf.l);
+	close(mapf.file);
 }
