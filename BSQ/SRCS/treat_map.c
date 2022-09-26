@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:11:17 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 15:29:30 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:35:10 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,25 @@ int	ft_atoi(char *str)
 
 t_file	len_of_line(char *str)
 {
-	int		c;
+	char	c;
 	t_file	mapf;
+	int		counter;
 
-	mapf.lines = 1;
+	counter = 0;
 	mapf.file = open(str, 0);
 	read(mapf.file, &c, 1);
 	while (c != '\n')
 	{
 		read(mapf.file, &c, 1);
-		mapf.lines++;
+		counter++;
 	}
-	mapf.buf = (char *)malloc(sizeof(char) * mapf.lines);
+	if (counter < 4)
+	{
+		mapf.lines = 0;
+		return (mapf);
+	}
+	mapf.lines = 1;
+	mapf.buf = (char *)malloc(sizeof(char) * counter) + 1;
 	close(mapf.file);
 	return (mapf);
 }
@@ -48,6 +55,8 @@ t_file	first_line_map(char *str)
 	char	c;
 
 	mapf = len_of_line(str);
+	if (!mapf.lines)
+		return (mapf);
 	mapf.file = open(str, 0);
 	mapf.lines = 0;
 	read(mapf.file, &c, 1);

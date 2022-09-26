@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:05:16 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/26 17:14:41 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:30:51 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ int	ft_check_map(char *map, t_file mapS)
 	f = open(map, 0);
 	read(f, &c, 1);
 	i = 0;
-	while(c != '\n')
+	while (c != '\n')
 	{
 		read(f, &c, 1);
 		i++;
 	}
-	if (i < 4 || mapS.empty == mapS.obs || mapS.empty == mapS.full 
+	if (i < 4 || mapS.empty == mapS.obs || mapS.empty == mapS.full \
 			|| mapS.obs == mapS.full || mapS.empty < 32 
 			|| mapS.empty > 127 || mapS.obs < 32 || mapS.obs > 127 
 			|| mapS.full < 32 || mapS.full > 127)
