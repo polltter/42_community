@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/26 15:35:18 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:21:19 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int	main(int ac, char **av)
 	//validar mapa
 	mapf = first_line_map(av[1]);
 	mapf.colunas = ft_maplength(av[1]);
-
+	
 }
