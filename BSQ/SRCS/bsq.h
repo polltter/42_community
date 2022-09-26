@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:09:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 15:15:07 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/26 15:34:20 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 typedef struct s_file
 {
 	int		file;
-	int		l;
+	int		colunas;
+	int		lines;
 	char	empty;
 	char	obs;
 	char	full;
@@ -31,5 +32,6 @@ typedef struct s_file
 }	t_file;
 
 t_file	first_line_map(char *str);
+int		ft_maplength(char *str);
 
 #endif

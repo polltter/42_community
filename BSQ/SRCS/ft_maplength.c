@@ -6,9 +6,11 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:11:49 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 15:12:03 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/26 15:32:57 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "bsq.h"
 
 int	ft_maplength(char *str)
 {

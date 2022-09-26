@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:11:17 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 15:19:09 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/26 15:29:30 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ t_file	len_of_line(char *str)
 	int		c;
 	t_file	mapf;
 
-	mapf.l = 1;
+	mapf.lines = 1;
 	mapf.file = open(str, 0);
 	read(mapf.file, &c, 1);
 	while (c != '\n')
 	{
 		read(mapf.file, &c, 1);
-		mapf.l++;
+		mapf.lines++;
 	}
-	mapf.buf = (char *)malloc(sizeof(char) * mapf.l);
+	mapf.buf = (char *)malloc(sizeof(char) * mapf.lines);
 	close(mapf.file);
 	return (mapf);
 }
@@ -49,20 +49,20 @@ t_file	first_line_map(char *str)
 
 	mapf = len_of_line(str);
 	mapf.file = open(str, 0);
-	mapf.l = 0;
+	mapf.lines = 0;
 	read(mapf.file, &c, 1);
-	mapf.buf[mapf.l] = c;
+	mapf.buf[mapf.lines] = c;
 	while (c != '\n')
 	{
 		read(mapf.file, &c, 1);
-		mapf.buf[++mapf.l] = c;
+		mapf.buf[++mapf.lines] = c;
 	}
-	mapf.buf[mapf.l] = '\0';
-	mapf.full = mapf.buf[mapf.l - 1];
-	mapf.obs = mapf.buf[mapf.l - 2];
-	mapf.empty = mapf.buf[mapf.l - 3];
-	mapf.buf[mapf.l - 3] = '\0';
-	mapf.l = ft_atoi(mapf.buf);
+	mapf.buf[mapf.lines] = '\0';
+	mapf.full = mapf.buf[mapf.lines - 1];
+	mapf.obs = mapf.buf[mapf.lines - 2];
+	mapf.empty = mapf.buf[mapf.lines - 3];
+	mapf.buf[mapf.lines - 3] = '\0';
+	mapf.lines = ft_atoi(mapf.buf);
 	close(mapf.file);
 	return (mapf);
 }
