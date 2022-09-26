@@ -6,7 +6,7 @@
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/26 12:53:17 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/26 13:02:44 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,29 @@ int	main(int ac, char **av)
 	l = 1;
 	file = open(av[1], 0);
 	read(file, &c, 1);
-	buf = malloc(100);
-	*buf = c;
 	while (c != '\n')
 	{
-		buf++;
 		read(file, &c, 1);
-		*buf = c;
 		l++;
 	}
-	buf[--l] = '\0';
+	buf = (char *)malloc(sizeof(char) * l);
+	close(file);
+	file = open(av[1], 0);
+	l = 0;
+	read(file, &c, 1);
+	buf[l] = c;
+	while (c != '\n')
+	{
+		read(file, &c, 1);
+		buf[++l] = c;
+	}
+	buf[l] = '\0';
 	printf("%s\n", buf);
 	full = buf[l -1];
 	obs = buf[l -2];
 	empty = buf[l -3];
 	buf[l - 3] = '\0';
 	l = ft_atoi(buf);
+	printf("%d\n", l);
+	close(file);
 }
