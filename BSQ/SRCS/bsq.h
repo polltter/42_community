@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BSQ.c                                              :+:      :+:    :+:   */
+/*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/26 15:22:42 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/26 13:09:54 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/26 15:15:07 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsq.h"
+#ifndef BSQ_H
+# define BSQ_H
 
-int	main(int ac, char **av)
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stdio.h>
+
+
+typedef struct s_file
 {
-	t_file	mapf;
+	int		file;
+	int		l;
+	char	empty;
+	char	obs;
+	char	full;
+	char	*buf;
 
-	(void) ac;
-	mapf = first_line_map(av[1]);
-	printf("%s%c%c%c\n", mapf.buf, mapf.empty, mapf.obs, mapf.full);
-}
+}	t_file;
+
+t_file	first_line_map(char *str);
+
+#endif

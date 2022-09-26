@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:11:17 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 15:11:18 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/26 15:19:09 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int	ft_atoi(char *str)
 	return (res);
 }
 
-t_file	len_of_line(t_file mapf, char *str)
+t_file	len_of_line(char *str)
 {
-	int	c;
+	int		c;
+	t_file	mapf;
 
 	mapf.l = 1;
 	mapf.file = open(str, 0);
@@ -46,7 +47,7 @@ t_file	first_line_map(char *str)
 	t_file	mapf;
 	char	c;
 
-	mapf = len_of_line(mapf, str);
+	mapf = len_of_line(str);
 	mapf.file = open(str, 0);
 	mapf.l = 0;
 	read(mapf.file, &c, 1);
@@ -63,4 +64,5 @@ t_file	first_line_map(char *str)
 	mapf.buf[mapf.l - 3] = '\0';
 	mapf.l = ft_atoi(mapf.buf);
 	close(mapf.file);
+	return (mapf);
 }
