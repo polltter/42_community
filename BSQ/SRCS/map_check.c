@@ -6,7 +6,7 @@
 /*   By: mtiago-s <mtiago-s@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:05:16 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/26 16:06:11 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:30:55 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_check_map_2(int f, char c, t_file mapS)
 			read(f, &c, 1);
 			i++;
 		}
-		if (i != mapS.col + 1)
+		if (i != mapS.colunas + 1)
 			return(0);
 	}
 	if (o = 0)
