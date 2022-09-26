@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_maplength.c                                     :+:      :+:    :+:   */
+/*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 15:11:49 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 15:12:03 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/26 13:09:54 by mvenanci          #+#    #+#             */
+/*   Updated: 2022/09/26 15:15:07 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_maplength(char *str)
-{
-	int		i;
-	int		f;
-	char	c;
+#ifndef BSQ_H
+# define BSQ_H
 
-	f = open(str, 0);
-	i = 0;
-	read(f, &c, 1);
-	while (c != '\n')
-		read(f, &c, 1);
-	read(f, &c, 1);
-	while (c != '\n')
-	{
-		read(f, &c, 1);
-		i++;
-	}
-	close(f);
-	return (i);
-}
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stdio.h>
+
+
+typedef struct s_file
+{
+	int		file;
+	int		l;
+	char	empty;
+	char	obs;
+	char	full;
+	char	*buf;
+
+}	t_file;
+
+t_file	first_line_map(char *str);
+
+#endif

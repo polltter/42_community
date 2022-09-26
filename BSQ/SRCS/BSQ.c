@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_maplength.c                                     :+:      :+:    :+:   */
+/*   BSQ.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 15:11:49 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 15:12:03 by mvenanci         ###   ########.fr       */
+/*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
+/*   Updated: 2022/09/26 15:22:42 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_maplength(char *str)
-{
-	int		i;
-	int		f;
-	char	c;
+#include "bsq.h"
 
-	f = open(str, 0);
-	i = 0;
-	read(f, &c, 1);
-	while (c != '\n')
-		read(f, &c, 1);
-	read(f, &c, 1);
-	while (c != '\n')
-	{
-		read(f, &c, 1);
-		i++;
-	}
-	close(f);
-	return (i);
+int	main(int ac, char **av)
+{
+	t_file	mapf;
+
+	(void) ac;
+	mapf = first_line_map(av[1]);
+	printf("%s%c%c%c\n", mapf.buf, mapf.empty, mapf.obs, mapf.full);
 }
