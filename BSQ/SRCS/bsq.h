@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:09:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/27 20:45:29 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:34:31 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,14 @@ int		ft_maplength(char *str);
 int		ft_check_map(char *map, t_file mapS);
 char	**create_matrix(t_file mapf, char *str);
 int		find_coord(t_file mapf, char **matrix, t_coord *coord, int size);
-t_coord	change_coord(t_file mapf, t_coord *coord, t_coord first_coord, int size);
+t_coord	change_coord(t_file mapf, t_coord *coord, t_coord first_coord, \
+int size);
 int		ft_find_sqmax(t_file mapf);
 void	ft_putstr(char *str);
 void	ft_print_map(char **matrix, t_file mapf);
 void	ft_put_sq(char **matrix, t_file mapf, int size, t_coord first_coord);
-char	*ft_input(t_file mapf);
+char	*ft_input(void);
+void	find_write_square(char **matrix, t_file mapf, t_coord *coord);
+void	cut_lines(char *str, t_coord *coord);
 
 #endif
