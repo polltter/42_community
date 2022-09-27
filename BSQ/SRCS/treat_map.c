@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:11:17 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 18:35:10 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:50:41 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_file	len_of_line(char *str)
 		return (mapf);
 	}
 	mapf.lines = 1;
-	mapf.buf = (char *)malloc(sizeof(char) * counter) + 1;
+	mapf.buf = (char *)malloc(sizeof(char) * counter + 1);
 	close(mapf.file);
 	return (mapf);
 }
