@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtiago-s <mtiago-s@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:26:22 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/27 17:00:56 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/27 20:02:50 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	ft_print_map(char **matrix, t_file mapf)
 		ft_putstr(matrix[i]);
 		i++;
 	}
-	write(1, "\n", 1);
 }
 
 void	ft_put_sq(char **matrix, t_file mapf, int size, t_coord first_coord)

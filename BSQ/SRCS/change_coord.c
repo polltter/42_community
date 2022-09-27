@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:00:04 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/27 14:49:43 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 19:51:39 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_coord	change_coord(t_file mapf, t_coord *coord, t_coord first_coord, int size)
 	{
 		coord->y = 0;
 		coord->x = first_coord.x + 1;
+		first_coord.x = coord->x;
+		first_coord.y = coord->y;
 		if (coord->x + size > mapf.lines - 1)
 		{
 			first_coord.x = 0;
