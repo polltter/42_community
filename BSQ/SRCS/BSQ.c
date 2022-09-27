@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/27 15:52:41 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/27 17:01:39 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,6 @@ int	main(int ac, char **av)
 		}
 	}
 	//printf("%d %d %d %d\n", suc, first_coord.y, first_coord.x, size);
+	if (suc)
+		ft_put_sq(matrix, mapf, size, first_coord);
 }
