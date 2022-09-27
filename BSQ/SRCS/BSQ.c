@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/27 20:02:55 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 20:56:00 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	main(int ac, char **av)
 	i = 1;
 	coord = &curr_coord;
 	if (ac == 1)
+	{
+		ft_input(mapf); //stra =  a esta funcao. e em baixo fazer exatamente o mesmo que o while em baixo.
 		return (0);
+	}
 	while (i < ac)
 	{
 		if (open(av[i], 0) == -1)
