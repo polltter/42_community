@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/26 18:39:58 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:56:33 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int ac, char **av)
 {
 	t_file	mapf;
 	char 	**matrix;
+	t_coord	coord;
 
 	if (ac == 1)
 		return (0);
@@ -37,7 +38,8 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	matrix = create_matrix(mapf, av[1]);
-	int i = -1;
-	while (++i < mapf.lines)
-		printf("%s\n", matrix[i]);
+	coord.x = 0;
+	coord.y = 0;
+	printf("%d\n", find_coord(mapf, matrix, &coord, 9));
+	printf("%d %d\n", coord.x, coord.y);
 }

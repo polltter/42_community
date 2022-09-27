@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:23:19 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 18:40:36 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:39:16 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_file	read_first_line(t_file mapf, char *str)
 	read(mapf.file, &c, 1);
 	while (c != '\n')
 		read(mapf.file, &c, 1);
-	read(mapf.file, &c, 1);
 	return (mapf);
 }
 

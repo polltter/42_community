@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:09:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/26 18:05:34 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:20:08 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,16 @@ typedef struct s_file
 
 }	t_file;
 
+typedef struct s_coord
+{
+	int	x;
+	int	y;
+}	t_coord;
+
 t_file	first_line_map(char *str);
 int		ft_maplength(char *str);
 int		ft_check_map(char *map, t_file mapS);
 char	**create_matrix(t_file mapf, char *str);
+int		find_coord(t_file mapf, char **matrix, t_coord *coord, int size);
 
 #endif
