@@ -1,10 +1,10 @@
-SRCS = srcs
-OBJS = ${SRCS:.c=.o}
-INCS = includes
-NAME = BSQ
-CC = gcc
-RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+SRCS	= srcs/create_matrix.c srcs/BSQ.c srcs/find_bsq.c srcs/ft_maplength.c srcs/map_check.c srcs/change_coord.c srcs/treat_map.c
+OBJS	= ${SRCS:.c=.o}
+INCS	= srcs/bsq.h
+NAME	= BSQ
+CC		= gcc
+RM		= rm -f
+CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${INCS}

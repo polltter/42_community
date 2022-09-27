@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/27 14:59:37 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:52:41 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	t_coord	*coord;
 	int		suc;
 	int		size;
-	
+
 	coord = &curr_coord;
 	if (ac == 1)
 		return (0);
@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	mapf.colunas = ft_maplength(av[1]);
-	if (!(ft_check_map(av[1], mapf)))//validaçao do mapa
+	if (!(ft_check_map(av[1], mapf))) //validaçao do mapa
 	{
 		write (1, "map error\n", 11);
 		return (0);
@@ -47,7 +47,7 @@ int	main(int ac, char **av)
 	first_coord.y = 0;
 	coord->x = 0;
 	coord->y = 0;
-	size = 9;
+	size = ft_find_sqmax(mapf);
 	suc = find_coord(mapf, matrix, coord, size);
 	while (!suc && size > 0)
 	{
@@ -62,5 +62,5 @@ int	main(int ac, char **av)
 			size--;
 		}
 	}
-	printf("%d %d %d %d\n", suc, first_coord.y, first_coord.x, size);
+	//printf("%d %d %d %d\n", suc, first_coord.y, first_coord.x, size);
 }
