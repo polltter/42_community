@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 09:30:13 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/27 11:41:01 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:42:39 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ int	valid_line(t_file mapf, char **matrix, t_coord *coord, int size)
 
 	i = -1;
 	while (++i < size)
-		if (matrix[coord->x + i][coord->y] == mapf.obs \
-		|| matrix[coord->x + i][coord->y] == 0)
-			return (-(coord->x + i));
+	{
+		if (matrix[coord->x][coord->y + i] == mapf.obs \
+		|| matrix[coord->x][coord->y + i] == 0)
+			return (-(coord->y + i));
+	}
 	return (1);
 }
 
@@ -30,9 +32,9 @@ int	valid_column(t_file mapf, char **matrix, t_coord *coord, int size)
 
 	i = -1;
 	while (++i < size)
-		if (matrix[coord->x][coord->y + i] == mapf.obs \
-		|| matrix[coord->x][coord->y + i] == 0)
-			return (-(coord->x + i));
+		if (matrix[coord->x + i][coord->y] == mapf.obs \
+		|| matrix[coord->x + i][coord->y] == 0)
+			return (-(coord->y));
 	return (1);
 }
 
@@ -48,9 +50,9 @@ int	check_coord(t_file mapf, char **matrix, t_coord *coord, int size)
 	if (next_x_line == 1 && next_x_column == 1)
 		return (1);
 	if (next_x_line != 1)
-		coord->x = -next_x_line + 1;
+		coord->x = -next_x_line;
 	else if (next_x_column != 1)
-		coord->x = -next_x_column + 1;
+		coord->x = -next_x_column;
 	return (0);
 }
 
@@ -66,5 +68,7 @@ int	find_coord(t_file mapf, char **matrix, t_coord *coord, int size)
 		return (find_coord(mapf, matrix, coord, size - 1));
 	}
 	else
+	{
 		return (0);
+	}
 }

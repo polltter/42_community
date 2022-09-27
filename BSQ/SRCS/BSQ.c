@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/27 12:54:50 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:59:37 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,16 @@ int	main(int ac, char **av)
 	suc = find_coord(mapf, matrix, coord, size);
 	while (!suc && size > 0)
 	{
-		printf("%d %d\n", first_coord.x, first_coord.y);
 		coord->x = first_coord.x;
 		coord->y = first_coord.y;
-		printf("antes da call da funcao\n");
 		suc = find_coord(mapf, matrix, coord, size);
 		if (suc)
 			break ;
-		printf("depois da call da funcao\n");
 		first_coord = change_coord(mapf, coord, first_coord, size);
 		if (first_coord.x == 0 && first_coord.y == 0)
+		{
 			size--;
+		}
 	}
+	printf("%d %d %d %d\n", suc, first_coord.y, first_coord.x, size);
 }
