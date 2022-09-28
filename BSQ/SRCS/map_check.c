@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:54:35 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/28 12:54:42 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:50:39 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	ft_check_map_2(int f, char c, t_file mapS)
 	int	o;
 	int	i;
 
-	o = 0;
-	while (c != EOF)
+	o = -1;
+	while (c != EOF && ++o != -20)
 	{
 		i = 1;
 		read(f, &c, 1);
@@ -30,8 +30,9 @@ int	ft_check_map_2(int f, char c, t_file mapS)
 				return (0);
 			read(f, &c, 1);
 			i++;
+			if (i > mapS.lines)
+				return (0);
 		}
-		o++;
 		if (i != mapS.colunas + 1)
 			return (0);
 	}
