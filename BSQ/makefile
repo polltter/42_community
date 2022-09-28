@@ -5,6 +5,7 @@ NAME	= bsq
 CC		= gcc
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
+FLAGSEXTRA	= -fsanitize=address -g
 FILE	= map_stdin
 
 .c.o:
@@ -15,6 +16,10 @@ ${NAME}: ${OBJS}
 	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
 all: ${NAME}
+
+sanitize: ${OBJS}
+	${RM} ${FILE}
+	${CC} ${CFLAGS} ${FLAGSEXTRA} ${OBJS} -o ${NAME}
 
 clean:
 	${RM} ${OBJS}
