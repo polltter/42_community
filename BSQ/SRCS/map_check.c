@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:05:16 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/28 12:10:42 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/28 12:46:19 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_check_map_2(int f, char c, t_file mapS)
 			break ;
 		while (c != '\n' && c != EOF)
 		{
-			if (c != mapS.obs || c != mapS.empty)
+			if (c != mapS.obs && c != mapS.empty)
 				return (0);
 			read(f, &c, 1);
 			i++;
