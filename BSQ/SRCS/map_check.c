@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:05:16 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/27 20:32:54 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/28 08:30:13 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	ft_check_map(char *map, t_file mapS)
 		i++;
 	}
 	if (i < 4 || mapS.empty == mapS.obs || mapS.empty == mapS.full \
-			|| mapS.obs == mapS.full || mapS.empty < 32 
-			|| mapS.empty > 127 || mapS.obs < 32 || mapS.obs > 127 
-			|| mapS.full < 32 || mapS.full > 127)
+	|| mapS.obs == mapS.full || mapS.empty < 32 \
+	|| mapS.empty > 127 || mapS.obs < 32 || mapS.obs > 127 \
+	|| mapS.full < 32 || mapS.full > 127)
 		return (0);
 	if (!(ft_check_map_2(f, c, mapS)))
 		return (0);
