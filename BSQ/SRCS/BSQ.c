@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/28 12:10:03 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:56:29 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	find_write_square(char **matrix, t_file mapf, t_coord *coord)
 
 	first_coord.x = 0;
 	first_coord.y = 0;
-	size = ft_find_sqmax(mapf);
+	size = find_max_size(mapf, matrix);
 	suc = find_coord(mapf, matrix, coord, size);
 	while (!suc && size > 0)
 	{
