@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/28 08:35:26 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:22:03 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,5 @@ void	find_write_square(char **matrix, t_file mapf, t_coord *coord)
 			size--;
 		}
 	}
-	if (suc)
-		ft_put_sq(matrix, mapf, size, first_coord);
-	else
-		write (1, "map error\n", 11);
+	ft_put_sq(matrix, mapf, size, first_coord);
 }
