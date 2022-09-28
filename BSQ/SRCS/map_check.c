@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:05:16 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/28 12:10:42 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/28 12:44:43 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,3 @@ int	ft_check_map(char *map, t_file mapS)
 		return (0);
 	return (1);
 }
-
-
