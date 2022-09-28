@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 12:10:48 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/28 13:58:11 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:00:58 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	max_col_space(char *str, t_file mapf)
 	int	max;
 	int	counter;
 
+	if (mapf.lines == 1)
+		return (1);
 	counter = 0;
 	max = 0;
 	i = -1;
@@ -62,10 +64,7 @@ int	find_max_size(t_file mapf, char **matrix)
 				break ;
 		}
 		if (i == mapf.lines)
-		{
-			printf("%d\n", size);
 			return (size);
-		}
 		size--;
 	}
 	return (0);
