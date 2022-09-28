@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/28 11:22:03 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/28 12:10:03 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	cut_lines(char *str, t_coord *coord)
 	find_write_square(create_matrix(mapf, str), mapf, coord);
 	close (mapf.file);
 }
-
 
 void	find_write_square(char **matrix, t_file mapf, t_coord *coord)
 {

@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:05:16 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/28 11:48:51 by mtiago-s         ###   ########.fr       */
+/*   Updated: 2022/09/28 12:10:42 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_check_map_2(int f, char c, t_file mapS)
 		if (i != mapS.colunas + 1)
 			return (0);
 	}
-	if (o !=  mapS.lines)
+	if (o != mapS.lines)
 		return (0);
 	return (1);
 }
@@ -64,14 +64,4 @@ int	ft_check_map(char *map, t_file mapS)
 	return (1);
 }
 
-int	ft_find_sqmax(t_file mapf)
-{
-	int	i;
 
-	i = 0;
-	if (mapf.colunas < mapf.lines)
-		i = mapf.colunas;
-	else
-		i = mapf.lines;
-	return (i);
-}
