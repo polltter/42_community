@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:09:54 by mvenanci          #+#    #+#             */
-/*   Updated: 2022/09/27 21:34:31 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:54:50 by mvenanci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void	ft_put_sq(char **matrix, t_file mapf, int size, t_coord first_coord);
 char	*ft_input(void);
 void	find_write_square(char **matrix, t_file mapf, t_coord *coord);
 void	cut_lines(char *str, t_coord *coord);
+int		ft_find_max_line_or_column(t_file mapf);
+int		find_max_size(t_file mapf, char **matrix);
 
 #endif
