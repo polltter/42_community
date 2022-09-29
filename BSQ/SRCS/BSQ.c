@@ -6,7 +6,7 @@
 /*   By: mvenanci <mvenanci@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 12:11:33 by mtiago-s          #+#    #+#             */
-/*   Updated: 2022/09/28 13:56:29 by mvenanci         ###   ########.fr       */
+/*   Updated: 2022/09/29 16:08:23 by mtiago-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ void	cut_lines(char *str, t_coord *coord)
 
 	if (open(str, 0) == -1)
 	{
-		write (1, "map error\n", 11);
+		write (1, "map error\n", 10);
 		return ;
 	}
 	mapf = first_line_map(str);
 	if (!mapf.lines)
 	{
-		write (1, "map error\n", 11);
+		write (1, "map error\n", 10);
 		return ;
 	}
 	mapf.colunas = ft_maplength(str);
 	if (!(ft_check_map(str, mapf)))
 	{
-		write (1, "map error\n", 11);
+		write (1, "map error\n", 10);
 		return ;
 	}
 	coord->x = 0;
